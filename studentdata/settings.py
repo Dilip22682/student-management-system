@@ -31,7 +31,7 @@ DEBUG = False
 # ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = ['.onrender.com']
 ALLOWED_HOSTS = [
-    "student-management-system-qvs4.onrender.com",
+    "student-management-system-qvs4.onrender.com"
     "localhost",
     "127.0.0.1",
 ]
