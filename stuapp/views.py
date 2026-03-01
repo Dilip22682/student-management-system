@@ -4,6 +4,7 @@ from .form import Stuform
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
+from django.db.models import Q
 
 
 # Create your views here.
@@ -56,3 +57,22 @@ def deleteStu(request,id):
     stuid=student_details.objects.get(id=id)
     stuid.delete()
     return redirect('list')
+
+def searchdata(request):
+    if request.method=="POST":
+        query=request.POST.get('q')
+        print("query:",query)
+        if query:
+            students = student_details.objects.filter(
+                Q(name__icontains=query) |
+                Q(emailId__icontains=query) |
+                Q(age__icontains=query) |
+                Q(course__icontains=query)
+            )
+            print("student:",students)
+        else:
+            students = student_details.objects.all()
+
+    return render(request, 'searchdata.html', {
+        'students': students
+    })

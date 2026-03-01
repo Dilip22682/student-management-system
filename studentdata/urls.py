@@ -24,4 +24,5 @@ urlpatterns = [
     path('form/',views.stdentcreate,name='form'),
     path('update/<int:id>/',views.updateStu,name='updatedata'),
     path('delete/<int:id>/',views.deleteStu,name='deletedata'),
+    path('search/',views.searchdata,name='searchdata'),
 ]
