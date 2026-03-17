@@ -29,7 +29,8 @@ SECRET_KEY = 'django-insecure-n(gv3bp62*9zytijr&crh($^yeie!wc*f3lt(y5bl*4cg80(w!
 DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['.onrender.com']
+# ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = ['*']   # for local server
 # ALLOWED_HOSTS = [
 #     "student-management-system-qvs4.onrender.com"
 #     "localhost",
